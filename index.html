@@ -190,9 +190,20 @@
         <h2 class="title is-3">Experimental Results</h2>
         <div class="content has-text-justified">
           <p>
-          We extensively validate our PRIVIMAGE on several popular DP benchmark datasets, namely, (conditional) CIFAR-10 and (unconditional) CelebA (downsampled to 32x32 and 64x64 resolutions respectively). We measure sample quality via FID. On CIFAR-10, we also assess utility of class-labeled generated data by training classifiers on synthesized samples and compute class prediction accuracy on real test data. As is standard practice, we consider logistic regression (LR), MLP, and CNN classifiers; see paper for details.  
+          We extensively validate our PRIVIMAGE on several popular DP benchmark datasets, namely, (conditional) CIFAR-10 and (unconditional) CelebA (downsampled to 32x32 and 64x64 resolutions respectively). We measure sample quality via FID. On CIFAR-10, we also assess utility of class-labeled generated data by training classifiers on synthesized samples and compute class prediction accuracy (CA) on real test data. As is standard practice, we consider logistic regression (LR), MLP, and CNN classifiers; see paper for details.  
           </p>
         </div>
+        figure style="margin-top: 20px; margin-bottom: 20px;">
+            <center>
+            <img width="70%" src="static/images/table3.png" style="margin-bottom: 20px;">
+        </center>
+          <div class="content has-text-justified">
+            <p class="caption">
+                FID and CA of PRIVIMAGE and four baselines on CIFAR-10, CelebA32 and CelebA64 with ε = 10,5,1.
+For space limitation, CeA32 and CeA64 refer to CelebA32 and CelebA64 respectively. The best performance in each column is
+highlighted using the bold font.
+            </p><p class="caption">
+          </div>
       </div>
     </div>
   </div>
