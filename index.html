@@ -152,7 +152,7 @@
       <div class="column is-four-fifths">
         <figure style="margin-top: 20px; margin-bottom: 20px;">
             <center>
-            <img width="80%" src="static/images/sdq.png" style="margin-bottom: 20px;">
+            <img width="70%" src="static/images/sdq.png" style="margin-bottom: 20px;">
         </center>
           <div class="content has-text-justified">
             <p class="caption">
@@ -187,10 +187,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">PRIVIMAGE</h2>
+        <h2 class="title is-3">Experimental Results</h2>
         <div class="content has-text-justified">
           <p>
-            Differential Privacy (DP) image data synthesis, which leverages the DP technique to generate synthetic data to replace the sensitive data, allowing organizations to share and utilize synthetic images without privacy concerns. Previous methods incorporate the advanced techniques of generative models and pre-training on a public dataset to produce exceptional DP image data, but suffer from problems of unstable training and massive computational resource demands. This paper proposes a novel DP image synthesis method, termed PRIVIMAGE, which meticulously selects pre-training data, promoting the efficient creation of DP datasets with high fidelity and utility. PRIVIMAGE first establishes a semantic query function using a public dataset. Then, this function assists in querying the semantic distribution of the sensitive dataset, facilitating the selection of data from the public dataset with analogous semantics for pre-training. Finally, we pre-train an image generative model using the selected data and then fine-tune this model on the sensitive dataset using Differentially Private Stochastic Gradient Descent (DP-SGD). PRIVIMAGE allows us to train a lightly parameterized generative model, reducing the noise in the gradient during DP-SGD training and enhancing training stability. Extensive experiments demonstrate that PRIVIMAGE uses only 1% of the public dataset for pre-training and 7.6% of the parameters in the generative model compared to the state-of-the-art method, whereas achieves superior synthetic performance and conserves more computational resources. On average, PRIVIMAGE achieves 6.8% lower FID and 13.2% higher Classification Accuracy than the state-of-the-art method.
+          We extensively validate our PRIVIMAGE on several popular DP benchmark datasets, namely, (conditional) CIFAR-10 and (unconditional) CelebA (downsampled to 32x32 and 64x64 resolutions respectively). We measure sample quality via FID. On CIFAR-10, we also assess utility of class-labeled generated data by training classifiers on synthesized samples and compute class prediction accuracy on real test data. As is standard practice, we consider logistic regression (LR), MLP, and CNN classifiers; see paper for details.  
           </p>
         </div>
       </div>
