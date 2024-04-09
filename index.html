@@ -179,7 +179,9 @@
             distribution aligns with the sensitive one, and train a DP generative model that significantly outperforms SOTA solutions.
             PRIVIMAGE consists of three steps. As in Figure 1, firstly, we derive a
             foundational semantic query function from the public dataset.
-            This function could be an image caption method or a straightforward image classifier. Secondly, PRIVIMAGE
+            This function could be an image caption method or a straightforward image classifier. In our experiments, we use a CNN classifier 
+            to implement this function, and train this classifier with Cross-Entropy loss.
+            Secondly, PRIVIMAGE
             uses the semantic query function to extract the semantics
             of each sensitive image. The frequencies of these extracted
             semantics then shape a semantic distribution, which can be
