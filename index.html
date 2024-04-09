@@ -172,7 +172,21 @@
         <h2 class="title is-3">PRIVIMAGE</h2>
         <div class="content has-text-justified">
           <p>
-            Differential Privacy (DP) image data synthesis, which leverages the DP technique to generate synthetic data to replace the sensitive data, allowing organizations to share and utilize synthetic images without privacy concerns. Previous methods incorporate the advanced techniques of generative models and pre-training on a public dataset to produce exceptional DP image data, but suffer from problems of unstable training and massive computational resource demands. This paper proposes a novel DP image synthesis method, termed PRIVIMAGE, which meticulously selects pre-training data, promoting the efficient creation of DP datasets with high fidelity and utility. PRIVIMAGE first establishes a semantic query function using a public dataset. Then, this function assists in querying the semantic distribution of the sensitive dataset, facilitating the selection of data from the public dataset with analogous semantics for pre-training. Finally, we pre-train an image generative model using the selected data and then fine-tune this model on the sensitive dataset using Differentially Private Stochastic Gradient Descent (DP-SGD). PRIVIMAGE allows us to train a lightly parameterized generative model, reducing the noise in the gradient during DP-SGD training and enhancing training stability. Extensive experiments demonstrate that PRIVIMAGE uses only 1% of the public dataset for pre-training and 7.6% of the parameters in the generative model compared to the state-of-the-art method, whereas achieves superior synthetic performance and conserves more computational resources. On average, PRIVIMAGE achieves 6.8% lower FID and 13.2% higher Classification Accuracy than the state-of-the-art method.
+            We highlight that the dataset with a semantic
+            distribution similar to the sensitive dataset is more suitable for
+            pre-training. Building on this observation, we present PRIVIMAGE, an end-to-end solution to meticulously and privately
+            select a small subset of the public dataset whose semantic
+            distribution aligns with the sensitive one, and train a DP generative model that significantly outperforms SOTA solutions.
+            PRIVIMAGE consists of three steps. Firstly, we derive a
+            foundational semantic query function from the public dataset.
+            This function could be an image caption method or a straightforward image classifier. Secondly, PRIVIMAGE
+            uses the semantic query function to extract the semantics
+            of each sensitive image. The frequencies of these extracted
+            semantics then shape a semantic distribution, which can be
+            used to select data from the public dataset for pre-training. To
+            make this query satisfy DP, we introduce Gaussian noise to
+            the queried semantic distribution. Finally, we pre-train image
+            generative models on the selected dataset and fine-tune pretrained models on the sensitive dataset with DP-SGD
           </p>
         </div>
       </div>
