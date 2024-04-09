@@ -171,35 +171,10 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">PRIVIMAGE</h2>
           <p>
-            DP image synthesis aims to generate synthetic
-            images that resemble real data while ensuring the original
-            dataset remains private. With DP image synthesis, organizations can share and utilize synthetic images, facilitating
-            various downstream tasks without privacy concerns.
-            Diffusion models have demonstrated potential in DP image synthesis. Dockhorn et
-al. advocated for training diffusion models using DPSGD, a widely adopted method for training models satisfying DP.
-            Drawing inspiration from the success of pre-training
-and fine-tuning across many challenging tasks in computer vision, Sabra et al. proposed to first pre-train
-the diffusion models on a public dataset, and then fine-tune
-them on the sensitive dataset. They attained state-of-the-art
-(SOTA) outcomes on datasets more intricate than those used
-by prior methods.<br>
-            We highlight that the dataset with a semantic
-            distribution similar to the sensitive dataset is more suitable for
-            pre-training. Building on this observation, we present PRIVIMAGE, an end-to-end solution to meticulously and privately
-            select a small subset of the public dataset whose semantic
-            distribution aligns with the sensitive one, and train a DP generative model that significantly outperforms SOTA solutions.<br>
-            PRIVIMAGE consists of three steps. As in Figure 1, firstly, we derive a
-            foundational semantic query function from the public dataset.
-            This function could be an image caption method or a straightforward image classifier. In our experiments, we use a CNN classifier 
-            to implement this function, and train this classifier with Cross-Entropy loss.
-            Secondly, PRIVIMAGE
-            uses the semantic query function to extract the semantics
-            of each sensitive image. The frequencies of these extracted
-            semantics then shape a semantic distribution, which can be
-            used to select data from the public dataset for pre-training. To
-            make this query satisfy DP, we introduce Gaussian noise to
-            the queried semantic distribution. Finally, we pre-train image
-            generative models on the selected dataset and fine-tune pretrained models on the sensitive dataset with DP-SGD
+            DP image synthesis aims to generate synthetic images that resemble real data while ensuring the original dataset remains private. With DP image synthesis, organizations can share and utilize synthetic images, facilitating various downstream tasks without privacy concerns. Diffusion models have demonstrated potential in DP image synthesis. Dockhorn et al. advocated for training diffusion models using DPSGD, a widely adopted method for training models satisfying DP. Drawing inspiration from the success of pre-training and fine-tuning across many challenging tasks in computer vision, Sabra et al. proposed to first pre-train the diffusion models on a public dataset, and then fine-tune them on the sensitive dataset. They attained state-of-the-art (SOTA) outcomes on datasets more intricate than those used by prior methods.<br>
+            We highlight that the dataset with a semantic distribution similar to the sensitive dataset is more suitable for pre-training. Building on this observation, we present PRIVIMAGE, an end-to-end solution to meticulously and privately
+            select a small subset of the public dataset whose semantic distribution aligns with the sensitive one, and train a DP generative model that significantly outperforms SOTA solutions.<br>
+            PRIVIMAGE consists of three steps. As in Figure 1, firstly, we derive a foundational semantic query function from the public dataset. This function could be an image caption method or a straightforward image classifier. In our experiments, we use a CNN classifier to implement this function, and train this classifier with Cross-Entropy loss. Secondly, PRIVIMAGE uses the semantic query function to extract the semantics of each sensitive image. The frequencies of these extracted semantics then shape a semantic distribution, which can be used to select data from the public dataset for pre-training. To make this query satisfy DP, we introduce Gaussian noise to the queried semantic distribution. Finally, we pre-train image generative models on the selected dataset and fine-tune pretrained models on the sensitive dataset with DP-SGD
           </p>
         </div>
       </div>
